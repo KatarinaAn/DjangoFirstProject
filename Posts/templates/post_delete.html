@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang='en'> 
+  <head>
+    <meta charset = 'utf-8'>
+    <title>Delete Post</title>
+  </head>
+<body>
+{% block content %}
+  <h2>Delete Post</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+      <label>Do you want to delete post?</label>
+    </p>
+      <input type="submit" value="Delete" />
+  </form>
+  <button><a href="{% url 'home' %}">Back</a></button>
+  {% endblock content %}
+  
+</body>
+</html>
